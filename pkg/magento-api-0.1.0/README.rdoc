@@ -21,26 +21,25 @@ Around line 504
 
 change to this
 
-code:ruby
-def startElement(name, attrs=[])
-   @data = nil
-   case name
-   when "value"
-     @value = nil
-   when "nil"
-     raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
-     @value = :nil 
-   when "array"
-     @val_stack << @values
-     @values = []
-   when "struct"
-     @names << @name
-     @name = []
+  def startElement(name, attrs=[])
+    @data = nil
+    case name
+      when "value"
+        @value = nil
+        when "nil"
+        raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
+        @value = :nil 
+      when "array"
+        @val_stack << @values
+        @values = []
+      when "struct"
+        @names << @name
+        @name = []
 
-     @structs << @struct
-     @struct = {} 
-   end
- end
+        @structs << @struct
+        @struct = {} 
+    end
+  end
 
 This allows for nil values to be handled by the parser.
 This bug exists due to the Magento api's handling of the responses.
