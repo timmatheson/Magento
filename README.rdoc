@@ -20,10 +20,11 @@ Edit the parser.rb file
 Around line 509
 
 change to this
-
+<code>
 when "nil"
   raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
   @value = :nil
+</code>
 
 This allows for nil values to be handled by the parser.
 This bug exists due to the Magento api's handling of the responses.
