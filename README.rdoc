@@ -4,6 +4,24 @@ This is a simple gem which wraps Magento XMLRPC calls with Ruby classes.
 This allows for you to integrate your Magento Shopping Cart into your Rails Application.
 This is not fully tested and some functionality is a WIP.
 
+The full Magento Core Api is available at http://www.magentocommerce.com/support/magento_core_api
+
+The current supported resources are:
+
+Category
+Country
+Customer
+CustomerAddress
+CustomerGroups
+Inventory
+Invoice
+Order
+Product
+ProductImages
+ProductTypes
+Region
+Shipment
+
 == Usage =====================
 
 Edit config/config.yml and add your magento api username and api key to the file.
