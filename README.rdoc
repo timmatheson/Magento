@@ -8,19 +8,19 @@ The full Magento Core Api is available at http://www.magentocommerce.com/support
 
 The current supported resources are:
 
-Category
-Country
-Customer
-CustomerAddress
-CustomerGroups
-Inventory
-Invoice
-Order
-Product
-ProductImages
-ProductTypes
-Region
-Shipment
+  Category
+  Country
+  Customer
+  CustomerAddress
+  CustomerGroups
+  Inventory
+  Invoice
+  Order
+  Product
+  ProductImages
+  ProductTypes
+  Region
+  Shipment
 
 == Usage =====================
 
