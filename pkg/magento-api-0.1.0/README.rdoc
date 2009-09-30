@@ -40,6 +40,11 @@ change to this
         @struct = {} 
     end
   end
+  
+The key change is 
+  unless Config::ENABLE_NIL_PARSER
+
+This will prevent the parser from raising exceptions when nil is returned.
 
 This allows for nil values to be handled by the parser.
 This bug exists due to the Magento api's handling of the responses.
