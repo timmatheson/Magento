@@ -21,6 +21,7 @@ Around line 504
 
 change to this
 
+code:ruby
 def startElement(name, attrs=[])
    @data = nil
    case name
