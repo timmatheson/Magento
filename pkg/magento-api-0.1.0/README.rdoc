@@ -31,7 +31,7 @@ Get a single customer with an ID of 1
 
   customer = Magento::Customer.find("1")
 
-  #all attributes are available now as array indexs
+  # all attributes are available now as array indexes
 
   customer['firstname'] => "Tim"
   customer['lastname'] => "Matheson"
