@@ -1,0 +1,12 @@
+== Magento ===================
+
+This is a simple gem which wraps Magento XMLRPC calls with Ruby classes.
+This allows for you to integrate your Magento Shopping Cart into your Rails Application.
+
+== Usage =====================
+
+See Rdoc
+
+== Issues ====================
+
+A patch needs to be applied to XMLRPC for this to work.

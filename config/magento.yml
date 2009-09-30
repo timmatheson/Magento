@@ -1,0 +1,6 @@
+username: "tmatheson"
+api_key: "123456"
+host: "127.0.0.1"
+path: "/magento/api/xmlrpc"
+port: 8888
+
