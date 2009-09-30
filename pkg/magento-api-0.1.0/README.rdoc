@@ -2,11 +2,28 @@
 
 This is a simple gem which wraps Magento XMLRPC calls with Ruby classes.
 This allows for you to integrate your Magento Shopping Cart into your Rails Application.
+This is not fully tested and some functionality is a WIP.
 
 == Usage =====================
 
-See Rdoc
+Edit config/config.yml and add your magento api username and api key to the file.
+
 
 == Issues ====================
 
 A patch needs to be applied to XMLRPC for this to work.
+
+Locate the xmlrpc gem on your system.
+
+Edit the parser.rb file
+
+Around line 509
+
+change to this
+
+when "nil"
+  raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
+  @value = :nil
+
+This allows for nil values to be handled by the parser.
+This bug exists due to the Magento api's handling of the responses.
