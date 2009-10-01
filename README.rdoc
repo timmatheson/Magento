@@ -41,39 +41,21 @@ Get a single customer with an ID of 1
 == Issues ====================
 
 A patch needs to be applied to XMLRPC for this to work.
+Without the patch you will most likely get this error.
+"wrong/unknown XML-RPC type 'nil'"
 
 Locate the xmlrpc gem on your system.
 
-Edit the parser.rb file
+Edit the config.rb file, find it in your system, locate the gem directory.
 
-Around line 504
+Around line 23
 
 change to this
-
-  def startElement(name, attrs=[])
-    @data = nil
-    case name
-      when "value"
-        @value = nil
-        when "nil"
-        raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
-        @value = :nil 
-      when "array"
-        @val_stack << @values
-        @values = []
-      when "struct"
-        @names << @name
-        @name = []
-
-        @structs << @struct
-        @struct = {} 
-    end
-  end
   
-The key change is 
-  unless Config::ENABLE_NIL_PARSER
+  ENABLE_NIL_PARSER    = false
 
-This will prevent the parser from raising exceptions when nil is returned.
+to this
 
-This allows for nil values to be handled by the parser.
-This bug exists due to the Magento api's handling of the responses.
+  ENABLE_NIL_PARSER    = true
+
+This will prevent the parser from raising exceptions when nil nodes are returned.
