@@ -11,4 +11,4 @@ Echoe.new('magento-api', '0.1.0') do |p|
   p.development_dependencies = []
 end
 
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
+Dir["#{File.dirname(__FILE__)}/lib/tasks/*.rake"].sort.each { |ext| load ext }
