@@ -28,5 +28,3 @@ module Magento
     end
   end
 end
-
-puts Magento::CustomerAddress.list

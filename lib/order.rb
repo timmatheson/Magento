@@ -5,6 +5,7 @@ module Magento
       orders = commit("order.list",args)
       order_list = []
       orders.each do |order|
+        puts order.inspect
         order_list.push(order.to_struct(self.class.to_s))
       end
       order_list
@@ -37,8 +38,3 @@ module Magento
     end
   end
 end
-
-#o = Magento::Order.find("100000001")
-#puts o.attributes
-
-puts Magento::Order.find("100000001").hold

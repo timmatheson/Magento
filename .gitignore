@@ -1,3 +1,9 @@
+.git
 pkg
+refs
+hooks
+info
 doc
 Manifest
+HEAD
+config/magento.yml

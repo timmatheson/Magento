@@ -1,12 +1,3 @@
-require 'extensions'
-require 'xmlrpc'
-require 'xmlrpc/client'
-require 'configuration'
-require 'customer'
-require 'inventory'
-require 'invoice'
-require 'order'
-
 module Magento
   class Connection 
     attr_accessor :client
@@ -22,3 +13,12 @@ module Magento
     end
   end
 end
+
+require 'extensions'
+#require 'xmlrpc'
+require 'xmlrpc/client'
+require 'configuration'
+require 'customer'
+require 'inventory'
+require 'invoice'
+require 'order'
