@@ -17,5 +17,5 @@ module Magento
     end
   end
   
-  class ConfigurationException; end;
+  class ConfigurationException < StandardError; end;
 end
