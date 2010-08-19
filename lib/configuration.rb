@@ -3,11 +3,15 @@ module Magento
   class Configuration
     attr_accessor :username, :api_key, :host, :path, :port
     
-    CONFIG_PATH = File.dirname(__FILE__) + "/../config/magento.yml"
+    @@config_path = File.dirname(__FILE__) + "/../config/magento.yml"
+    
+    def self.config_path=(path)
+      @@config_path = path
+    end
     
     def initialize
-      raise ConfigurationException, "Missing configuration file" unless File.exists?(CONFIG_PATH)
-      options = YAML.load_file(CONFIG_PATH)
+      raise ConfigurationException, "Missing configuration file" unless File.exists?(@@config_path)
+      options = YAML.load_file(@@config_path)
       @username = options["username"]
       @api_key  = options["api_key"]
       @host     = options["host"]

@@ -17,6 +17,7 @@ end
 require 'extensions'
 #require 'xmlrpc'
 require 'xmlrpc/client'
+require 'abstract'
 require 'configuration'
 require 'customer'
 require 'inventory'
